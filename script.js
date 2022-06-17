@@ -4,10 +4,16 @@ function BuildGrid(){
     let gridDimensions = 16;
     let boxSize = 768 / gridDimensions;
 
+    drawContainer.innerHTML = '';
+
+    // while (drawContainer.firstChild){
+    //     drawContainer.removeChild(drawContainer.firstChild);
+    // }
+
     for (let x = 0; x < gridDimensions; x++) {
         for (let y = 0; y < gridDimensions; y++) {
             CreateSquare(boxSize);
-        } 
+        }
     }
 }
 
