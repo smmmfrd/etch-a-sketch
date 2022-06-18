@@ -20,6 +20,10 @@ function BuildGrid(){
 function CreateSquare(pixelSize){
     let sq = document.createElement('div');
     sq.style=`width:${pixelSize}px;height:${pixelSize}px;background-color:white;`;
-    console.log(drawContainer);
+
+    sq.addEventListener('mouseover', () => {
+        sq.style.backgroundColor = "black";
+    });
+    
     drawContainer.appendChild(sq);
 }
