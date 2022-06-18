@@ -1,9 +1,20 @@
 const drawContainer = document.querySelector('#etch-a-sketch');
+const sizeChanger = document.querySelector('#size-changer');
 
+UpdateSize();
 BuildGrid();
 
+function GetSize(){
+    return Math.pow(2, sizeChanger.value);
+}
+
+function UpdateSize(){
+    let newSize = GetSize();
+    document.querySelector('#sizeDisplay').textContent = `${newSize} x ${newSize}`;
+}
+
 function BuildGrid(){
-    let gridDimensions = 16;
+    let gridDimensions = GetSize();
     let boxSize = 768 / gridDimensions;
 
     drawContainer.innerHTML = '';

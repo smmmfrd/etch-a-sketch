@@ -15,7 +15,10 @@
         <div id="input">
             <h1>Etch-a-Sketch</h1>
             <button onclick="BuildGrid()">Build Grid</button>
+            <div id="sizeDisplay"></div>
+            <input type="range" min="1" max="6" id="size-changer" oninput="UpdateSize()">
         </div>
+
         <div id="etch-a-sketch"></div>
     </div>
 
