@@ -41,7 +41,7 @@ function CreateSquare(pixelSize, border=0){
     let sq = document.createElement('div');
     sq.style=`width:${pixelSize - border}px; height:${pixelSize - border}px; margin-bottom:${border}px; margin-right:${border}px; background-color:white;`;
 
-    sq.addEventListener('click', () => {
+    sq.addEventListener('mousedown', () => {
         sq.style.backgroundColor = GetColorClick();
     });
     sq.addEventListener('mouseover', () => {
