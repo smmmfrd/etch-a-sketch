@@ -29,3 +29,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
 }
+
+#etch-a-sketch{
+    user-select: none;
+}

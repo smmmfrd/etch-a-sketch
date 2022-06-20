@@ -41,9 +41,12 @@ function CreateSquare(pixelSize, border=0){
     let sq = document.createElement('div');
     sq.style=`width:${pixelSize - border}px; height:${pixelSize - border}px; margin-bottom:${border}px; margin-right:${border}px; background-color:white;`;
 
+    sq.addEventListener('click', () => {
+        sq.style.backgroundColor = GetColorClick();
+    });
     sq.addEventListener('mouseover', () => {
-        let color = GetColor();
-
+        let color = GetColorDrag();
+    
         if(color!=null) {
             sq.style.backgroundColor = color;
         }
@@ -52,8 +55,15 @@ function CreateSquare(pixelSize, border=0){
     drawContainer.appendChild(sq);
 }
 
-function GetColor(){
+function GetColorClick(){
+    if(!rainbow){
+        return colorPicker.value;
+    } else {
+        return GetRandomColor();
+    }
+}
 
+function GetColorDrag(){
     if(drawing){
         if(!rainbow){
             return colorPicker.value;
