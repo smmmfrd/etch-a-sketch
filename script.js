@@ -1,8 +1,8 @@
 const drawContainer = document.querySelector('#etch-a-sketch');
 const sizeChanger = document.querySelector('#size-changer');
+const colorPicker = document.querySelector('#color-picker');
 
 var rainbow = false;
-var currentColor = "yellow";
 
 UpdateSize();
 BuildGrid();
@@ -38,7 +38,11 @@ function CreateSquare(pixelSize, border=0){
     sq.style=`width:${pixelSize - border}px; height:${pixelSize - border}px; margin-bottom:${border}px; margin-right:${border}px; background-color:white;`;
 
     sq.addEventListener('mouseover', () => {
-        sq.style.backgroundColor = GetColor();
+        let color = GetColor();
+
+        if(color!=null) {
+            sq.style.backgroundColor = color;
+        }
     });
     
     drawContainer.appendChild(sq);
@@ -46,7 +50,7 @@ function CreateSquare(pixelSize, border=0){
 
 function GetColor(){
     if(!rainbow){
-        return currentColor;
+        return colorPicker.value;
     } else {
         return GetRandomColor();
     }
