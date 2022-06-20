@@ -6,6 +6,7 @@ var drawing = false;
 document.body.onmousedown = () => {drawing = true;};
 document.body.onmouseup = () => {drawing = false;};
 
+var eraser = false;
 var rainbow = false;
 
 UpdateSize();
@@ -57,20 +58,19 @@ function CreateSquare(pixelSize, border=0){
 }
 
 function GetColorClick(){
-    if(!rainbow){
-        return colorPicker.value;
-    } else {
+    if(eraser){
+        return "white";
+    }
+    if(rainbow){
         return GetRandomColor();
     }
+
+    return colorPicker.value;
 }
 
 function GetColorDrag(){
     if(drawing){
-        if(!rainbow){
-            return colorPicker.value;
-        } else {
-            return GetRandomColor();
-        }
+        return GetColorClick();
     } else {
         return null;
     }
@@ -85,10 +85,28 @@ function GetRandomColor(){
     return color;
 }
 
-function Eraser(){
-    currentColor = "white";
+function ToggleEraser(){
+    eraser = !eraser;
+
+    if(eraser){
+        document.querySelector('#eraser-button').classList.add("active-button");
+
+        rainbow = false
+        document.querySelector('#rainbow-button').classList.remove("active-button");
+    } else {
+        document.querySelector('#eraser-button').classList.remove("active-button");
+    }
 }
 
 function ToggleRainbow(){
     rainbow = !rainbow;
+
+    if(rainbow){
+        document.querySelector('#rainbow-button').classList.add("active-button");
+
+        eraser = false;
+        document.querySelector('#eraser-button').classList.remove("active-button");
+    } else {
+        document.querySelector('#rainbow-button').classList.remove("active-button");
+    }
 }

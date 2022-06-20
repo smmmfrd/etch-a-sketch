@@ -17,15 +17,16 @@
 
             <input type="color" id="color-picker" value="#000000">
             <!-- <label for="color-picker">Color Picker</label> -->
-            
+
             <button onclick="BuildGrid()">Clear</button>
-            <button onclick="Eraser()">Eraser</button>
-            <button onclick="ToggleRainbow()">Rainbow</button>
+            <button onclick="ToggleEraser()" id="eraser-button">Eraser</button>
+            <button onclick="ToggleRainbow()" id="rainbow-button">Rainbow</button>
 
             <!-- <button onclick="BuildGrid()">Build Grid</button> -->
-            <div id="sizeDisplay"></div>
-            <input type="range" min="0" max="6" value="4" id="size-changer" oninput="UpdateSize()">
-            
+            <div>
+                <div id="sizeDisplay"></div>
+                <input type="range" min="0" max="6" value="4" id="size-changer" oninput="UpdateSize()">
+            </div>
         </div>
 
         <div id="etch-a-sketch"></div>
