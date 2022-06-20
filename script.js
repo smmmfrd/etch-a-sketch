@@ -37,6 +37,9 @@ function BuildGrid(){
             CreateSquare(boxSize, 1);
         }
     }
+
+    ToggleEraser(true);
+    ToggleRainbow(true);
 }
 
 function CreateSquare(pixelSize, border=0){
@@ -85,8 +88,8 @@ function GetRandomColor(){
     return color;
 }
 
-function ToggleEraser(){
-    eraser = !eraser;
+function ToggleEraser(clearInput = false){
+    eraser = clearInput ? false : !eraser;
 
     if(eraser){
         document.querySelector('#eraser-button').classList.add("active-button");
@@ -98,8 +101,8 @@ function ToggleEraser(){
     }
 }
 
-function ToggleRainbow(){
-    rainbow = !rainbow;
+function ToggleRainbow(clearInput = false){
+    rainbow = clearInput ? false : !rainbow;
 
     if(rainbow){
         document.querySelector('#rainbow-button').classList.add("active-button");
