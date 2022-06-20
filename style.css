@@ -8,8 +8,10 @@ footer{
 }
 
 #main{
+    margin-top: 64px;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 16px;
     gap: 8px;
 }
@@ -17,8 +19,8 @@ footer{
 #etch-a-sketch{
     flex-shrink: 0;
 
-    width: 768px;
-    height: 768px;
+    width: 640px;
+    height: 640px;
     background-color: grey;
 
     display: flex;
@@ -78,4 +80,16 @@ footer{
 
 #size-changer{
     margin: 0px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+}
+
+.footer > *{
+    margin: 0;
 }

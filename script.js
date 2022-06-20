@@ -24,7 +24,7 @@ function UpdateSize(){
 
 function BuildGrid(){
     let gridDimensions = GetSize();
-    let boxSize = 768 / gridDimensions;
+    let boxSize = 640 / gridDimensions;
 
     drawContainer.innerHTML = '';
 
