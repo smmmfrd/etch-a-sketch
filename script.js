@@ -1,6 +1,7 @@
 const drawContainer = document.querySelector('#etch-a-sketch');
 const sizeChanger = document.querySelector('#size-changer');
 
+var rainbow = false;
 var currentColor = "yellow";
 
 UpdateSize();
@@ -37,12 +38,33 @@ function CreateSquare(pixelSize, border=0){
     sq.style=`width:${pixelSize - border}px; height:${pixelSize - border}px; margin-bottom:${border}px; margin-right:${border}px; background-color:white;`;
 
     sq.addEventListener('mouseover', () => {
-        sq.style.backgroundColor = currentColor;
+        sq.style.backgroundColor = GetColor();
     });
     
     drawContainer.appendChild(sq);
 }
 
+function GetColor(){
+    if(!rainbow){
+        return currentColor;
+    } else {
+        return GetRandomColor();
+    }
+}
+
+function GetRandomColor(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * letters.length)];
+    }
+    return color;
+}
+
 function Eraser(){
     currentColor = "white";
+}
+
+function ToggleRainbow(){
+    rainbow = !rainbow;
 }
