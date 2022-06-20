@@ -9,14 +9,9 @@ footer{
 
 #main{
     display: flex;
+    justify-content: center;
     padding: 16px;
-}
-
-#input{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 8px;
 }
 
 #etch-a-sketch{
@@ -30,6 +25,39 @@ footer{
     flex-wrap: wrap;
 }
 
-#etch-a-sketch{
+#etch-a-sketch > *{
     user-select: none;
+}
+
+#input{
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+
+    background-color: rgb(94, 20, 20);
+    border: 1px solid rgb(94, 20, 20);
+    border-radius: 16px;
+    
+    gap: 16px;
+
+    color: white;
+}
+
+#color-picker{
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+#color-picker::-webkit-color-swatch{
+    border-radius: 4px;
+    border: none;
+}
+#color-picker::-moz-color-swatch{
+    border-radius: 4px;
+    border: none;
 }

@@ -18,6 +18,7 @@ function GetSize(){
 function UpdateSize(){
     let newSize = GetSize();
     document.querySelector('#sizeDisplay').textContent = `${newSize} x ${newSize}`;
+    BuildGrid();
 }
 
 function BuildGrid(){

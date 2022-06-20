@@ -14,16 +14,17 @@
     <div id="main">
         <div id="input">
             <h1>Etch-a-Sketch</h1>
-            <button onclick="BuildGrid()">Build Grid</button>
-            <div id="sizeDisplay"></div>
-            <input type="range" min="1" max="6" id="size-changer" oninput="UpdateSize()">
 
+            <input type="color" id="color-picker" value="#000000">
+            <!-- <label for="color-picker">Color Picker</label> -->
+            
             <button onclick="BuildGrid()">Clear</button>
             <button onclick="Eraser()">Eraser</button>
             <button onclick="ToggleRainbow()">Rainbow</button>
 
-            <input type="color" id="color-picker" value="#000000">
-            <label for="color-picker">Color Picker</label>
+            <!-- <button onclick="BuildGrid()">Build Grid</button> -->
+            <div id="sizeDisplay"></div>
+            <input type="range" min="0" max="6" value="4" id="size-changer" oninput="UpdateSize()">
             
         </div>
 
