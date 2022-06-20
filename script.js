@@ -2,6 +2,10 @@ const drawContainer = document.querySelector('#etch-a-sketch');
 const sizeChanger = document.querySelector('#size-changer');
 const colorPicker = document.querySelector('#color-picker');
 
+var drawing = false;
+document.body.onmousedown = () => {drawing = true;};
+document.body.onmouseup = () => {drawing = false;};
+
 var rainbow = false;
 
 UpdateSize();
@@ -49,10 +53,15 @@ function CreateSquare(pixelSize, border=0){
 }
 
 function GetColor(){
-    if(!rainbow){
-        return colorPicker.value;
+
+    if(drawing){
+        if(!rainbow){
+            return colorPicker.value;
+        } else {
+            return GetRandomColor();
+        }
     } else {
-        return GetRandomColor();
+        return null;
     }
 }
 
