@@ -1,6 +1,8 @@
 const drawContainer = document.querySelector('#etch-a-sketch');
 const sizeChanger = document.querySelector('#size-changer');
 
+var currentColor = "yellow";
+
 UpdateSize();
 BuildGrid();
 
@@ -35,8 +37,12 @@ function CreateSquare(pixelSize, border=0){
     sq.style=`width:${pixelSize - border}px; height:${pixelSize - border}px; margin-bottom:${border}px; margin-right:${border}px; background-color:white;`;
 
     sq.addEventListener('mouseover', () => {
-        sq.style.backgroundColor = "black";
+        sq.style.backgroundColor = currentColor;
     });
     
     drawContainer.appendChild(sq);
+}
+
+function Eraser(){
+    currentColor = "white";
 }
